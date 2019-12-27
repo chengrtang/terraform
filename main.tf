@@ -13,6 +13,10 @@ resource "aws_instance" "app_test" {
   instance_type     = "t2.micro"
   availability_zone = "us-east-2a"
   ami               = "ami-0c55b159cbfafe1f0"
+  
+  tags = {
+    Name = "terraform-example"
+  }
 
   user_data = <<-EOF
               #!/bin/bash
